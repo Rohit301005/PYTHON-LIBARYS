@@ -1,0 +1,74 @@
+What is data manipulation and analysis?
+
+
+1. Data Manipulation
+
+Definition:
+Data manipulation means changing, cleaning, organizing, or transforming raw data so it becomes useful and structured for analysis.
+
+Purpose:
+Raw data is often messy — it may have missing values, duplicate entries, or wrong formats. Manipulation prepares it for meaningful use.
+
+Examples of data manipulation:
+
+Removing or filling missing data (e.g., replacing NaN with 0 or average value)
+
+Sorting or filtering data (e.g., only taking data from 2024)
+
+Combining multiple datasets (merging data from two files)
+
+Changing data types (like converting a string "25" to an integer 25)
+
+Creating new columns from existing ones (like calculating “total_price = price × quantity”)
+
+In Python, libraries like Pandas and NumPy are most commonly used for data manipulation.
+Example:
+
+import pandas as pd
+
+# Load data
+df = pd.read_csv("sales.csv")
+
+# Clean and manipulate
+df.dropna(inplace=True)                # Remove missing values
+df['total'] = df['price'] * df['qty']  # Create new column
+df = df[df['total'] > 1000]            # Filter rows
+
+📊 2. Data Analysis
+
+Definition:
+Data analysis is the process of examining, interpreting, and drawing conclusions from data after it has been cleaned and manipulated.
+
+Purpose:
+To find patterns, trends, and insights that can support decision-making.
+
+Examples of data analysis:
+
+Calculating averages, sums, or other statistics
+
+Visualizing trends using charts (bar, line, pie, etc.)
+
+Finding correlations between variables
+
+Detecting outliers or unusual patterns
+
+Making predictions using statistical or machine learning methods
+
+In Python, libraries like Pandas, Matplotlib, Seaborn, and Scikit-learn are commonly used for analysis.
+
+Example:
+
+import matplotlib.pyplot as plt
+
+# Summary statistics
+print(df.describe())
+
+# Visualization
+plt.bar(df['product'], df['total'])
+plt.title('Total Sales by Product')
+plt.show()
+
+🧠 In short:
+Step	What It Means	Example Tools	Goal
+Data Manipulation	Preparing and cleaning data	Pandas, NumPy	Make data usable
+Data Analysis	Understanding and interpreting data	Pandas, Matplotlib, Seaborn	Extract insights

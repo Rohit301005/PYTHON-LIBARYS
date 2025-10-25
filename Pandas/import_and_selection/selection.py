@@ -12,4 +12,11 @@ df = pd.read_csv("PYTHON-LIBARYS\Pandas\import_and_selection\data.csv",index_col
 
 # Selection by ROW/S
 # print(df.loc["Pikachu" ,["Height", "Wieght"]])
-print(df.loc["Pikachu"])
+# print(df.loc["Pikachu"])
+
+pokemon = input("Enter the name of the pokemin: ")
+
+try:
+    print(df.loc[pokemon])
+except KeyError:
+    print(f'{pokemon} not found')
